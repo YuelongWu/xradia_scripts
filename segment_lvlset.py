@@ -81,7 +81,8 @@ def seg_one_img_lvlset(mname, outdir):
     clip_filter = sitk.RescaleIntensityImageFilter()
     clip_filter.SetOutputMaximum(1)
     clip_filter.SetOutputMinimum(0)
-    thresh_filter = sitk.OtsuThresholdImageFilter()
+    # thresh_filter = sitk.OtsuThresholdImageFilter()
+    thresh_filter = sitk.HuangThresholdImageFilter()
     thresh_filter.SetInsideValue(0)
     thresh_filter.SetOutsideValue(1)
 
